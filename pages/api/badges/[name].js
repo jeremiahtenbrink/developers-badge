@@ -1,38 +1,16 @@
-import Cors from "cors";
-
-// Initializing the cors middleware
-const cors = Cors( {
-  methods: [ "GET", "HEAD" ],
-} );
-
-// Helper method to wait for a middleware to execute before continuing
-// And to throw an error when an error happens in a middleware
-function runMiddleware( req, res, fn ){
-  
-  return new Promise( ( resolve, reject ) => {
-    debugger;
-    fn( req, res, ( result ) => {
-      if( result instanceof Error ){
-        return reject( result );
-      }
-      
-      return resolve( result );
-    } );
-  } );
-}
+import { runCoors } from "../utils/cors";
 
 async function handler( req, res ){
-  debugger;
   const { name } = req.query;
   // Run the middleware
-  runMiddleware( req, res, cors )
+  runCoors( req, res )
     .then( result => {
       debugger;
       const svg = getLinkedInSvg( name );
       res.setHeader( "content-type", "image/svg+xml" );
       res.send( svg );
     } ).catch( err => {
-    debugger;
+    
     // Rest of the API logic
     res.status( 400 ).json( { message: err.message } );
   } );
