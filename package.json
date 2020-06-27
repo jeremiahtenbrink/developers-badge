@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "yarn start"
   },
   "dependencies": {
     "cors": "^2.8.5",
