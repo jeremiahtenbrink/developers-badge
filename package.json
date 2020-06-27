@@ -1,11 +1,18 @@
 {
   "name": "github-badge",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": "Jeremiah Tenbrink",
+  "license": "MIT",
+  "description": "Deploy Next.js server-side React apps to Heroku",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT"
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremiahtenbrink/github-badge"
   },
   "dependencies": {
     "cors": "^2.8.5",
