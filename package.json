@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1"
