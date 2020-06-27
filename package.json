@@ -5,13 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "heroku-postbuild": "yarn start"
+    "start": "next start"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1"
+  },
+  "engines": {
+    "node": "13.13.0",
+    "yarn": "1.15.2"
   }
 }
