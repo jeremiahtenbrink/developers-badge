@@ -17,9 +17,9 @@ async function handler( req, res ){
   
 }
 
-const getLinkedInSvg = ( name ) => {
+const getLinkedInSvg = ( name, height = 30 ) => {
   return `
-  <svg width="118" height="15" viewBox="0 0 118 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg width="118" height="${ height }" viewBox="0 0 118 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="linkedInBadge">
 <g clip-path="url(#clip0)">
 <rect width="118" height="15" rx="2" fill="#006699"/>
