@@ -11,9 +11,13 @@ async function handler( req, res ){
       getResumeSvg( name ).then( svg => {
         res.setHeader( "content-type", "image/svg+xml" );
         res.send( svg );
+      } ).catch( err => {
+        console.log( err.message );
+        res.status( err.status || 500 ).json( { error: err.message } );
       } );
     } ).catch( err => {
     // Rest of the API logic
+    console.log( err.message );
     res.status( 400 ).json( { message: err.message } );
   } );
   
