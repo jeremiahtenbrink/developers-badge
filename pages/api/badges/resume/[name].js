@@ -5,6 +5,7 @@ import { runCoors } from "../../utils/cors";
 async function handler( req, res ){
   const { name } = req.query;
   // Run the middleware
+  console.log( name );
   runCoors( req, res )
     .then( result => {
       getResumeSvg( name ).then( svg => {
