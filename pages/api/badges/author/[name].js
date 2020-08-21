@@ -5,7 +5,7 @@ async function handler( req, res ){
   // Run the middleware
   runCoors( req, res )
     .then( result => {
-      const svg = getGithubBadge( name );
+      const svg = getAuthorBadge( name );
       res.setHeader( "content-type", "image/svg+xml" );
       res.send( svg );
     } ).catch( err => {
@@ -16,7 +16,7 @@ async function handler( req, res ){
   
 }
 
-const getGithubBadge = ( name, height = 30 ) => {
+const getAuthorBadge = ( name, height = 30 ) => {
   return `
 <svg width="407" height="130" viewBox="0 0 407 130" fill="none"
      xmlns="http://www.w3.org/2000/svg"
